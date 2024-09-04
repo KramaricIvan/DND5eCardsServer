@@ -30,7 +30,7 @@ const damageTypeColors = {
 };
 
 async function loadSpellData() {
-    const response = await fetch('data/spells.json');
+    const response = await fetch('./data/spells.json');
     spellData = await response.json();
     renderSpellList();
 }
@@ -56,7 +56,7 @@ function renderSpellCard(spellName) {
         : `${ordinalNumber(spell.Level)}-level ${spell.School.toLowerCase()}`;
     levelSchoolElem.style.color = schoolColors[spell.School.toLowerCase()] || '#000000';
 
-    document.getElementById('school-icon').src = `images/school-icons/${spell.School.toLowerCase()}.svg`;
+    document.getElementById('school-icon').src = `./images/school-icons/${spell.School.toLowerCase()}.svg`;
 
     renderStatIcons(spell);
     renderDescription(spell);
@@ -67,7 +67,7 @@ function renderStatIcons(spell) {
     const statIconsContainer = document.querySelector('.flexStatIcons');
     statIconsContainer.innerHTML = `
         <div class="DurationFlexAll">
-            <img src="images/noun-sand-clock-1610904.svg" class="DurationIcon" alt="Duration icon">
+            <img src="./images/noun-sand-clock-1610904.svg" class="DurationIcon" alt="Duration icon">
             <div class="CastingTextFlex">
                 ${spell['Casting Time']}<br>${spell.Duration}
             </div>
@@ -75,14 +75,14 @@ function renderStatIcons(spell) {
         <div class="FlexRangeRitual">
             <div class="RangeFlex">
                 ${spell.Range}
-                <img src="images/noun-range-2931108.svg" class="RangeIcon" alt="Range icon">
+                <img src="./images/noun-range-2931108.svg" class="RangeIcon" alt="Range icon">
             </div>
             <img src="images/noun-ritual-5105870.svg" class="RitualIcon ${spell.Ritual ? '' : 'inactive'}" alt="Ritual icon">
         </div>
         <div class="CompFlex">
-            <img src="images/noun-x-hand-sign-4134185.svg" class="SomaticIcon ${spell.Components.somatic ? '' : 'inactive'}" alt="Somatic icon">
-            <img src="images/noun-speaking-6509212.svg" class="VocalIcon ${spell.Components.verbal ? '' : 'inactive'}" alt="Vocal icon">
-            <img src="images/noun-focus-6059259.svg" class="ConcentrationIcon ${spell.Concentration ? '' : 'inactive'}" alt="Concentration icon">
+            <img src="./images/noun-x-hand-sign-4134185.svg" class="SomaticIcon ${spell.Components.somatic ? '' : 'inactive'}" alt="Somatic icon">
+            <img src="./images/noun-speaking-6509212.svg" class="VocalIcon ${spell.Components.verbal ? '' : 'inactive'}" alt="Vocal icon">
+            <img src="./images/noun-focus-6059259.svg" class="ConcentrationIcon ${spell.Concentration ? '' : 'inactive'}" alt="Concentration icon">
         </div>
     `;
 }
@@ -105,7 +105,7 @@ function renderFooter(spell) {
 
     const classIconsContainer = document.getElementById('class-icons');
     classIconsContainer.innerHTML = spell['Spell Lists'].map(className => 
-        `<img src="images/class-icons/${className.toLowerCase()}.png" alt="${className} class icon">`
+        `<img src="./images/class-icons/${className.toLowerCase()}.png" alt="${className} class icon">`
     ).join('');
 }
 
@@ -122,7 +122,7 @@ function replaceWithIcons(text) {
 
     Object.keys(diceReplacements).forEach(key => {
         const regex = new RegExp(key, 'g');
-        text = text.replace(regex, `<img src="images/dice-icons/${diceReplacements[key]}" class="dice-icon" alt="${key}">`);
+        text = text.replace(regex, `<img src="./images/dice-icons/${diceReplacements[key]}" class="dice-icon" alt="${key}">`);
     });
 
     Object.keys(damageTypeColors).forEach(damageType => {
