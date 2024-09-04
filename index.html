@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Spell Cards</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="spell-list"></div>
+        <div id="spell-card" class="dnd-body">
+            <div class="flexWholeCard">
+                <div class="upperPageContainer">
+                    <div class="titleGroup">
+                        <div class="dnd-group-elements-1">
+                            <div class="titleFlexContainer">
+                                <h1 id="spell-name"></h1>
+                                <p id="spell-level-school" class="spellLevelSchool"></p>
+                            </div>
+                        </div>
+                        <img id="school-icon" class="dnd-image-1" alt="School icon">
+                    </div>
+                    <div class="flexStatIcons">
+                        <!-- Stat icons will be inserted here by JavaScript -->
+                    </div>
+                    <div id="spell-description" class="descriptionText"></div>
+                </div>
+                <div class="FlexFooter">
+                    <div class="FlexComponent">
+                        <img src="images/noun-pouch-5332369.svg" id="material-icon" class="MaterialIcon" alt="Component icon">
+                        <span id="material-components"></span>
+                    </div>
+                    <div id="class-icons" class="flexClassIcons">
+                        <!-- Class icons will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

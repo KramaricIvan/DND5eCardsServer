@@ -1,0 +1,190 @@
+/* styles.css */
+
+body {
+    font-family: 'Bell Centennial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    font-weight: bold;
+}
+
+#app {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+}
+
+#spell-list {
+    width: 30%;
+    overflow-y: auto;
+    height: 100vh;
+    border-right: 1px solid #ccc;
+}
+
+.spell-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.spell-item:hover {
+    background-color: #e0e0e0;
+}
+
+.dnd-body {
+    width: 70%;
+    height: 1074px;
+    background-color: #ffffff;
+    overflow: hidden;
+    padding: 50px;
+}
+
+.flexWholeCard {
+    display: flex;
+    flex-direction: column;
+    height: 974px;
+}
+
+.upperPageContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.titleGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dnd-group-elements-1 {
+    flex: 1;
+}
+
+.dnd-image-1 {
+    width: 210px;
+}
+
+.titleFlexContainer h1 {
+    font-family: 'Bungee', cursive;
+    font-size: 3.333em;
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.titleFlexContainer p,
+.CastingTextFlex,
+.RangeFlex,
+.descriptionText,
+.FlexComponent {
+    font-size: 28px;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.spellLevelSchool {
+    font-weight: 550;
+    font-style: italic;
+}
+
+.flexStatIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.DurationFlexAll, .CompFlex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.FlexRangeRitual {
+    display: flex;
+    flex-direction: row;
+}
+
+.CompFlex {
+    gap: 2px;
+}
+
+.DurationIcon, .RitualIcon, .SomaticIcon, .VocalIcon, .ConcentrationIcon, .MaterialIcon {
+    width: 70px;
+    height: 70px;
+    filter: brightness(0%);
+}
+
+.DurationIcon.inactive, .RitualIcon.inactive, .SomaticIcon.inactive, 
+.VocalIcon.inactive, .ConcentrationIcon.inactive, .MaterialIcon.inactive {
+    opacity: 0.1;
+    filter: grayscale(100%) brightness(200%);
+}
+
+.RangeIcon {
+    width: 70px;
+}
+
+.RangeFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descriptionText {
+    line-height: 1;
+    overflow-y: auto;
+    flex: 1;
+    margin-top: 15px;
+    text-indent: 50px;
+    text-align: justify;
+}
+
+.FlexFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.FlexComponent {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.FlexComponent img {
+    margin-right: 10px;
+}
+
+.flexClassIcons {
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+.flexClassIcons img {
+    width: 40px;
+    height: 65px;
+    margin-left: 2px;
+}
+
+.dice-icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.damage-type {
+    font-weight: bold;
+    color: var(--damage-color);
+}
+
+.damage-type .dice-icon {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(81%) saturate(2476%) hue-rotate(calc(var(--damage-color) - var(--damage-color) + 0deg)) brightness(100%) contrast(100%);
+}
